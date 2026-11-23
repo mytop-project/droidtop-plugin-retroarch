@@ -6,14 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-- Its page shows a one-line summary, droidtop as its maker and its own page, from the manifest's `summary`, `publisher` and `homepage` (docs/plugin-api.md 1.2 "Presentation", Droidtop/tracker#521).
-- Names its kind for droidtop's Plugins page (`category`: emulators, docs/plugin-api.md 1.2, Droidtop/tracker#179).
-- Calls droidtop's host operations by their contract 2.1 names (droidtop docs/plugin-api.md 3 "Naming", Droidtop/tracker#762): `retroarch.send_command`, `retroarch.get_status`, `library.read.list_systems`, `plugins.list_available`, `data.get_path`, `job.get_status` and `job.cancel`. The old names are aliases that go at contract 2.2. Nothing changes for the person.
+- Its page shows a one-line summary, droidtop as its maker and its own page, from the manifest's `summary`, `publisher` and `homepage` (docs/plugin-api.md 1.2 "Presentation", mytop-project/tracker#521).
+- Names its kind for droidtop's Plugins page (`category`: emulators, docs/plugin-api.md 1.2, mytop-project/tracker#179).
+- Calls droidtop's host operations by their contract 2.1 names (droidtop docs/plugin-api.md 3 "Naming", mytop-project/tracker#762): `retroarch.send_command`, `retroarch.get_status`, `library.read.list_systems`, `plugins.list_available`, `data.get_path`, `job.get_status` and `job.cancel`. The old names are aliases that go at contract 2.2. Nothing changes for the person.
 
 ## 1.7.0
 
 ### Changed
-- RetroArch missing is said by droidtop, not by the plugin (Droidtop/tracker#520): the `apps.bridge` entry names the app (`app`, `packages`, `get`), so droidtop puts one "RetroArch isn't installed" notice with Get at the top of the panel. The panel's own "Get RetroArch" row is gone.
+- RetroArch missing is said by droidtop, not by the plugin (mytop-project/tracker#520): the `apps.bridge` entry names the app (`app`, `packages`, `get`), so droidtop puts one "RetroArch isn't installed" notice with Get at the top of the panel. The panel's own "Get RetroArch" row is gone.
 - The Save state and Fast-forward quick tiles and the status tile say `"needs": "app"`: while RetroArch is not installed droidtop draws them inert with "Needs RetroArch, which isn't installed" instead of live tiles and a "not installed" value.
 
 ## 1.6.0
@@ -22,7 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `download_core` uses the `playerPackage` droidtop passes (it must be a RetroArch package and installed, else "RetroArch <package> is not installed") instead of guessing among the installed ones; the guess is kept only for an older droidtop that sends none. The automatic download on a launch no longer stops when the system's player is not the first installed RetroArch.
 - The core's ABI follows that package (aarch64 is 64-bit, ra32 is 32-bit, the universal id the device's preference), so a ra32 RetroArch on an arm64 device gets the 32-bit core.
 - A core already in the plugin's data as a whole ELF for the ABI is returned as `file` without downloading again.
-- The result also carries `package`. When no root helper is allowed the note says droidtop hands the core to RetroArch's own sideload (droidtop does that, Droidtop/tracker#271).
+- The result also carries `package`. When no root helper is allowed the note says droidtop hands the core to RetroArch's own sideload (droidtop does that, mytop-project/tracker#271).
 
 ## 1.5.2
 
@@ -51,7 +51,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Note
 - The slot shown is counted from the changes made here, from slot 0 for each game: RetroArch cannot be asked for its slot.
-- Needs a droidtop with `retroarch.command` and companion panels (Droidtop/tracker#414, slice C9 and C10), and RetroArch's Network Commands on.
+- Needs a droidtop with `retroarch.command` and companion panels (mytop-project/tracker#414, slice C9 and C10), and RetroArch's Network Commands on.
 
 ### Needs a rig check
 - Turn on Network Commands in RetroArch. Start a GBA game in RetroArch from droidtop: the companion's Game tab shows the RetroArch rows. Save state ("Saved to slot 0"), play on, Load state: it asks first, then the game goes back. Slot up, save, load: RetroArch's own slot message on screen matches the row. With Network Commands off, the rows are replaced by "RetroArch is not answering".

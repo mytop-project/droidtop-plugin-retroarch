@@ -1,6 +1,6 @@
 {
   "upstream": {
-    "repo": "Droidtop/droidtop-plugin-retroarch",
+    "repo": "mytop-project/droidtop-plugin-retroarch",
     "ref": "creation",
     "commit": "44e5ad8c9cab96867e0391c661bd2f225b68e56b"
   },

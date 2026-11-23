@@ -6,8 +6,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Droidtop/droidtop-plugin-retroarch/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Droidtop/droidtop-plugin-retroarch?label=release&style=flat-square"></a>
-  <a href="https://github.com/Droidtop/droidtop-plugin-retroarch/actions"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/Droidtop/droidtop-plugin-retroarch/build.yml?branch=main&label=build&style=flat-square"></a>
+  <a href="https://github.com/mytop-project/droidtop-plugin-retroarch/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/mytop-project/droidtop-plugin-retroarch?label=release&style=flat-square"></a>
+  <a href="https://github.com/mytop-project/droidtop-plugin-retroarch/actions"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/mytop-project/droidtop-plugin-retroarch/build.yml?branch=main&label=build&style=flat-square"></a>
   <img alt="For droidtop" src="https://img.shields.io/badge/for-droidtop-2f7bf5?style=flat-square">
   <a href="LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-blue?style=flat-square"></a>
 </p>
@@ -24,7 +24,7 @@
   <a href="#licence">Licence</a>
 </p>
 
-A plugin for [droidtop](https://github.com/Droidtop/droidtop) that works with an **already installed** RetroArch. It never bundles, patches or redistributes any RetroArch code. It talks to your copy the way any other app on the device could.
+A plugin for [droidtop](https://github.com/mytop-project/droidtop) that works with an **already installed** RetroArch. It never bundles, patches or redistributes any RetroArch code. It talks to your copy the way any other app on the device could.
 
 ## What it does
 
@@ -38,7 +38,7 @@ Every fact the plugin relies on is cited against RetroArch's own source in [DESI
 
 ## Install
 
-You need [droidtop](https://github.com/Droidtop/droidtop). You also need RetroArch installed.
+You need [droidtop](https://github.com/mytop-project/droidtop). You also need RetroArch installed.
 
 1. In droidtop open **Settings > Plugins > Add**. droidtop's own catalog is always there.
 2. Pick **RetroArch manager** and press **Install**.
@@ -79,7 +79,7 @@ export ANDROID_JAR=$ANDROID_SDK_ROOT/platforms/android-36/android.jar
 classpath from a droidtop checkout (`./gradlew :plugin-host:assembleDebug`,
 then unzip `classes.jar` out of the resulting AAR) — see
 `.github/workflows/build.yml` for exactly how CI does this against
-`Droidtop/droidtop`'s own `main`.
+`mytop-project/droidtop`'s own `main`.
 
 ## Licence
 
@@ -98,7 +98,7 @@ it a plugin, we have a branch for the actual core code, and releases are a blend
   changelog) and each line's pin in `plugin-line/lines/<line>/line.json`.
 - **`creation`**: the core code and its tests.
 - **`plugin/stable`**: `creation` at the pinned commit with `plugin-core` written over it, composed by
-  Droidtop/droidtop-platforms `tools/plugin_line.py` and checked by `plugin-line.yml`. The bundle and releases
+  mytop-project/droidtop-platforms `tools/plugin_line.py` and checked by `plugin-line.yml`. The bundle and releases
   are built from it; nothing is authored there.
 
 Every change lands on `creation` or `plugin-core` through a `ci/` branch, and the line is recomposed. There is no
